@@ -6,7 +6,7 @@ services:
     restart: always
     build:
       context: .
-      dockerfile: Dockerfile.devv
+      dockerfile: Dockerfile.dev
     volumes:
       - ./src:/usr/app/src
     ports:
@@ -14,7 +14,7 @@ services:
   tests:
     build:
       context: .
-      dockerfile: Dockerfile.devv
+      dockerfile: Dockerfile.dev
     volumes:
       - ./src:/usr/app/src
     command: [ "mvn", "test" ]
