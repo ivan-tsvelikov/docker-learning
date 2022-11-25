@@ -1,0 +1,28 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Zeppelin ignored files
+/ZeppelinRemoteNotebooks/
+/.idea/codeStyles/codeStyleConfig.xml
+/target/surefire-reports/com.ivan.service.VisitCounterImplTest.txt
+/.idea/compiler.xml
+/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+/.idea/csv-plugin.xml
+/target/dock-1.0-SNAPSHOT.jar
+/target/dock-1.0-SNAPSHOT.jar.original
+/.idea/sonarlint/issuestore/index.pb
+/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/target/maven-archiver/pom.properties
+/.idea/codeStyles/Project.xml
+/target/surefire-reports/TEST-com.ivan.service.VisitCounterImplTest.xml
+/.idea/uiDesigner.xml
+/.idea/vcs.xml

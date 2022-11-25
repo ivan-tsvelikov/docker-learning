@@ -1,0 +1,4 @@
+FROM amazoncorretto:17-alpine-jdk
+WORKDIR /usr/app
+COPY target/dock-1.0-SNAPSHOT.jar ./dock-2.0.0.jar
+CMD ["java","-jar","./dock-2.0.0.jar"]
