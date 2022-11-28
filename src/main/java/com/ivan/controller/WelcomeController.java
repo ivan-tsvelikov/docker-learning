@@ -21,7 +21,7 @@ public class WelcomeController {
     @GetMapping
     public ResponseEntity<?> makeInitialCall() {
         int numberOfVisits = visitCounter.count();
-        return new ResponseEntity<>("Hi there once again! Number of site visits is: " + numberOfVisits, HttpStatus.OK);
+        return new ResponseEntity<>("Added feature branch. Hi there once again! Number of site visits is: " + numberOfVisits, HttpStatus.OK);
     }
 
     @GetMapping("/crash")
