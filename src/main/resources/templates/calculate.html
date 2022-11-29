@@ -1,32 +1,39 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>FIBONACCI</title>
 </head>
+<style>
+    .content {
+        max-width: 500px;
+        margin: auto;
+    }
+</style>
 <body>
-<div id="one">
+<div class="content">
     <h1>
         <span>Fib Calculator</span>
     </h1>
+    <form class="content" method="POST" th:action="@{/calculate}" th:object="${fibonacciInput}">
+        <div><label for="first">Enter your index:</label></div>
+        <input id="first" type="text" th:field="*{index}"/>
+        <input type="submit" value="Send"/>
+    </form>
 </div>
-<form method="POST" th:action="@{/calculate}" th:object="${fibonacciInput}">
-    <div><label for="first">Enter your index:</label></div>
-    <input id="first" type="text" th:field="*{index}"/>
-    <input type="submit" value="Send"/>
-</form>
 
-<div id="two">
+<div class="content">
     <h1>
         <span>Indicies I have seen</span>
     </h1>
     <span th:each="index, iterator : ${indicies}" th:text="${index} + ${!iterator.last ? ', ' : ''}"></span>
 </div>
 
-<div id="three">
+<div class="content">
     <h1>
         <span>Calculated values</span>
     </h1>
-    <br th:each="index : ${calculated}" th:text="${'For index '} + ${index.first} + ${' I calculated '} + ${index.second}">
+    <br th:each="index : ${calculated}"
+        th:text="${'For index '} + ${index.first} + ${' I calculated '} + ${index.second}">
 </div>
 </body>
 </html>
