@@ -40,6 +40,6 @@ public class FibonacciController {
         calculatedValues.add(three);
         model.addAttribute("calculated", calculatedValues);
 
-        return "index";
+        return "calculate";
     }
 }

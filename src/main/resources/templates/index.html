@@ -14,19 +14,3 @@
     <input id="first" type="text" th:field="*{index}"/>
     <input type="submit" value="Send"/>
 </form>
-
-<div id="two">
-    <h1>
-        <span>Indicies I have seen</span>
-    </h1>
-    <span th:each="index, iterator : ${indicies}" th:text="${index} + ${!iterator.last ? ', ' : ''}"></span>
-</div>
-
-<div id="three">
-    <h1>
-        <span>Calculated values</span>
-    </h1>
-    <br th:each="index : ${calculated}" th:text="${'For index '} + ${index.first} + ${' I calculated '} + ${index.second}">
-</div>
-</body>
-</html>
