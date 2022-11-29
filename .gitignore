@@ -26,3 +26,4 @@
 /target/surefire-reports/TEST-com.ivan.service.VisitCounterImplTest.xml
 /.idea/uiDesigner.xml
 /.idea/vcs.xml
+/target/*
