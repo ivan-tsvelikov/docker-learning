@@ -1,6 +1,8 @@
 package com.ivan.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -12,6 +14,6 @@ public class Fibonacci {
     @SequenceGenerator(name = "sequence_one", sequenceName = "sequence_one", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_one")
     private Integer id;
-    private String index;
+    private String ind;
     private String value;
 }

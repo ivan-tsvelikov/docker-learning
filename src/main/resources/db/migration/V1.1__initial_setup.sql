@@ -1,6 +1,6 @@
 create table if not exists fib (
     id integer primary key ,
-    index varchar,
+    ind varchar,
     value varchar
 );
 
