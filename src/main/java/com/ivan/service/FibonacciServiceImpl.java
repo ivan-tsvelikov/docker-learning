@@ -25,11 +25,11 @@ public class FibonacciServiceImpl implements FibonacciService {
         if (redisResult != null) {
             return redisResult;
         } else {
-            String result = String.valueOf(fibonacciRecursive(val));
+            String result = String.valueOf(fibonacci(val));
             redisStringTemplate.opsForValue().set(value, result);
             Fibonacci fibonacci = new Fibonacci();
-            fibonacci.setInd(result);
-            fibonacci.setValue(value);
+            fibonacci.setInd(value);
+            fibonacci.setValue(result);
             fibRepository.save(fibonacci);
             return result;
         }
@@ -50,9 +50,20 @@ public class FibonacciServiceImpl implements FibonacciService {
         return fibRepository.findAllIndexes();
     }
 
-    private int fibonacciRecursive(int n) {
+    private int fibonacci(int n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
-        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+
+        int prevPrev = 0;
+        int prev = 1;
+        int result = 0;
+
+        for (int i = 2; i <= n; i++)
+        {
+            result = prev + prevPrev;
+            prevPrev = prev;
+            prev = result;
+        }
+        return result;
     }
 }
