@@ -24,6 +24,10 @@ public class FibonacciController {
 
     @PostMapping("/calculate")
     public String calculateFibonacciAtIndex(Model model, @ModelAttribute FibonacciInput fibonacciInput) {
+        if (fibonacciInput.getIndex() > 120) {
+            log.error("Index to calculate is too high!");
+            return "error";
+        }
         log.info("Received fibonacci input {}", fibonacciInput.getIndex());
         fibonacciService.calculateFibonacci(fibonacciInput.getIndex());
         model.addAttribute("indicies", fibonacciService.getCalculatedFibonaccies());
