@@ -8,14 +8,17 @@ before_install:
 script:
   - docker run -e CI=true itsvelikov/docker-learning mvn test
 
-deploy:
-  provider: elasticbeanstalk
-  region: "eu-central-1"
-  app: "docker"
-  env: "Docker-env"
-  bucket_name: "elasticbeanstalk-eu-central-1-951562419135"
-  bucket_path: "docker"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+after_success:
+  - docker build -t itsvelikov/docker-learning -f Dockerfile .
+
+#deploy:
+#  provider: elasticbeanstalk
+#  region: "eu-central-1"
+#  app: "docker"
+#  env: "Docker-env"
+#  bucket_name: "elasticbeanstalk-eu-central-1-951562419135"
+#  bucket_path: "docker"
+#  on:
+#    branch: master
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key: $AWS_SECRET_KEY

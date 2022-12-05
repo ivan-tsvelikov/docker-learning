@@ -9,4 +9,4 @@ FROM amazoncorretto:17-alpine-jdk
 EXPOSE 80
 WORKDIR /usr/app
 COPY  --from=builder /usr/app/dock-2.0.0.jar /usr/app/dock.jar
-CMD ["java","-jar","./dock.jar"]
+#CMD ["java","-jar","./dock.jar"]
