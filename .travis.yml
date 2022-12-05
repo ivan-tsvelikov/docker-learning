@@ -10,6 +10,11 @@ script:
 
 after_success:
   - docker build -t itsvelikov/docker-learning -f Dockerfile .
+# Logging in to the docker CLI
+# first part retrieves pass from travis env and supply is an input for the next part of command
+  - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USERNAME" --password-stdin
+# Take image and push it to the docker hub
+  - docker push itsvelikov/docker-learning
 
 #deploy:
 #  provider: elasticbeanstalk
