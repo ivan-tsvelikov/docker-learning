@@ -1,19 +1,21 @@
 server:
-  port: 5000
+  port: ${APP_PORT}
 spring:
   redis:
-    port: 6379
-    host: redis-server
+    port: ${REDIS_PORT}
+    host: ${REDIS_HOST}
   jpa:
-    database: postgresql
+    database: ${POSTGRES_DB}
     show-sql: true
     open-in-view: false
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: password
+    url: jdbc:${POSTGRES_DB}://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_USER}
+    #    url: jdbc:postgresql://localhost:5432/postgres
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
     driverClassName: org.postgresql.Driver
   flyway:
-    url: jdbc:postgresql://localhost:5432/postgres
-    user: postgres
-    password: password
+    url: jdbc:${POSTGRES_DB}://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_USER}
+    #    url: jdbc:postgresql://localhost:5432/postgres
+    user: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
